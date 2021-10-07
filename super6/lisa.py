@@ -1,4 +1,5 @@
 # A little program to guess the results of Super6 using Lisa's method
+import random
 
 print("\tWelcome to this week SUPER 6!!!\n")
 
@@ -6,7 +7,7 @@ home_team = int()
 away_team = int()
 
 iterations = 1
-import random
+
 
 while iterations < 7:
 
