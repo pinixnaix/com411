@@ -8,5 +8,7 @@ elif direction == 'left':
     print(f"\nI am painting in the {direction}ward direction!")
 elif direction == 'right':
     print(f"\nI am painting in the {direction}ward direction!")
+elif direction == 'down':
+    print(f"\nI am painting in the {direction}ward direction!")
 else:
-    print("\nI am painting in the downward direction!")
+    print("\nThat is not a direction.")
