@@ -1,5 +1,6 @@
 print("Program Started!")
 print("Please enter an ASCII code:")
+
 code = int(input())
 
 if code in range(32, 127):
