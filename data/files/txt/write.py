@@ -6,10 +6,10 @@ def search(path):
     with open(path) as file:
         for line in file:
 
-            if line.find("Section:"):
-                books += line
-            else:
+            if line.startswith("Section"):
                 sections += line
+            else:
+                books += line
 
     print("Done")
     return f"{sections}\n\n{books}"
