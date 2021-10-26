@@ -5,14 +5,21 @@ def directions():
 
 
 def menu():
-    print("Please select a direction:")
+    print("\nPlease select a direction:")
     direct = directions()
     for x in range(len(direct)):
         print(f"{x}: {direct[x]}")
+    return direct[int(input())]
 
 
 def run():
-    menu()
+    route = []
+    print("Working out escape route...")
+
+    for x in range(5):
+        route.append(menu())
+
+    print(f"Escape route: {route}")
 
 
 if __name__ == "__main__":
