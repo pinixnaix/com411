@@ -28,13 +28,26 @@ def display_menu():
     return int(input())
 
 
+def display_passenger_names():
+    print("The names of the passengers are...\n")
+
+    for record in records:
+        passenger_name = record[3]
+        print(passenger_name)
+
+
 def run():
     load_data("titanic.csv")
 
     print(f"Successfully loaded {len(records)} records.")
 
     selected_option = display_menu()
-    print(f"You have selection option: {selected_option}")
+    print(f"You have selection option: {selected_option}\n")
+
+    if selected_option == 1:
+        display_passenger_names()
+    else:
+        print("**** Error! Option not recognised! ****")
 
 
 if __name__ == "__main__":
