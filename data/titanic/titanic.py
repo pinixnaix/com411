@@ -66,12 +66,14 @@ def display_passengers_per_age_group():
     elderly = 0
 
     for record in records:
-        if record[5] < '18':
-            children += 1
-        elif record[5] < '65':
-            adults += 1
-        else:
-            elderly += 1
+        if record[5] != '':
+            age = float(record[5])
+            if age < 18:
+                children += 1
+            elif age < 65:
+                adults += 1
+            else:
+                elderly += 1
 
     print(f"Children: {children}, Adults: {adults}, Elderly: {elderly}")
 
@@ -85,18 +87,20 @@ def display_survivors_per_age_group():
     survived_elderly = 0
 
     for record in records:
-        if record[5] < '18':
-            children += 1
-            if record[1] == '1':
-                survived_children += 1
-        elif record[5] < '65':
-            adults += 1
-            if record[1] == '1':
-                survived_adults += 1
-        else:
-            elderly += 1
-            if record[1] == '1':
-                survived_elderly += 1
+        if record[5] != '':
+            age = float(record[5])
+            if age < 18:
+                children += 1
+                if record[1] == '1':
+                    survived_children += 1
+            elif age < 65:
+                adults += 1
+                if record[1] == '1':
+                    survived_adults += 1
+            else:
+                elderly += 1
+                if record[1] == '1':
+                    survived_elderly += 1
 
     print(f"Children: {survived_children}/{children}, Adults: {survived_adults}/{adults}, Elderly: {survived_elderly}/{elderly}")
 
