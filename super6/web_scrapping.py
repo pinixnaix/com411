@@ -12,6 +12,7 @@ src = result.content
 soup = BeautifulSoup(src, 'html.parser')
 
 table = soup.find_all("table")
+print(table)
 league_table = table[0]
 teams = league_table.find_all("tr")
 for team in teams[1:21]:
