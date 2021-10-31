@@ -1,4 +1,7 @@
 MATCH,PROBABILITIES,BOTH TEAMS TO SCORE,OVER 2.5,HOME FORM,AWAY FORM,HEAD TO HEAD
-b'31/10/2021 [20] Norwich [17] Leeds\n',b'\xc2\xa015\xc2\xa0\xc2\xa020\xc2\xa0\xc2\xa065\xc2\xa0 \xc2\xa0 \xc2\xa0 \xc2\xa0A\xc2\xa0',b'\xc2\xa050\xc2\xa0',b'\xc2\xa056\xc2\xa0',L  W  L  L  L  D,W  W  L  D  D  L,W   D   D   L   W   L
-b'31/10/2021 [13] Aston Villa [4] West Ham\n',b'\xc2\xa048\xc2\xa0\xc2\xa024\xc2\xa0\xc2\xa027\xc2\xa0 \xc2\xa0 \xc2\xa0 \xc2\xa0D\xc2\xa0',b'\xc2\xa056\xc2\xa0',b'\xc2\xa054\xc2\xa0',D  W  W  D  W  L,D  W  W  D  W  W,W   L   W   D   D   L
-b'01/11/2021 [11] Wolves [8] Everton\n',b'\xc2\xa047\xc2\xa0\xc2\xa028\xc2\xa0\xc2\xa025\xc2\xa0 \xc2\xa0 \xc2\xa0 \xc2\xa0H\xc2\xa0',b'\xc2\xa043\xc2\xa0',b'\xc2\xa038\xc2\xa0',W  L  L  L  L  W,D  L  D  W  L  D,D   L   D   D   W   L
+"31/10/2021 [20] Norwich [17] Leeds
+","['15', '20', '65', 'A']",['50'],['56'],"['L', 'W', 'L', 'L', 'L', 'D']","['W', 'W', 'L', 'D', 'D', 'L']","['W', 'D', 'D', 'L', 'W', 'L']"
+"31/10/2021 [13] Aston Villa [4] West Ham
+","['48', '24', '27', 'D']",['56'],['54'],"['D', 'W', 'W', 'D', 'W', 'L']","['D', 'W', 'W', 'D', 'W', 'W']","['W', 'L', 'W', 'D', 'D', 'L']"
+"01/11/2021 [11] Wolves [8] Everton
+","['47', '28', '25', 'H']",['43'],['38'],"['W', 'L', 'L', 'L', 'L', 'W']","['D', 'L', 'D', 'W', 'L', 'D']","['D', 'L', 'D', 'D', 'W', 'L']"

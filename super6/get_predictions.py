@@ -20,24 +20,37 @@ def predictions(path, file):
         stats = predictions_table.find_all("td")
         for x in range(0, len(stats), 8):
             match = stats[x].text
-            probs = stats[x+1].text
-            btts = stats[x+2].text
-            over = stats[x+3].text
-            home = stats[x+4].text
-            away = stats[x+5].text
-            head = stats[x+6].text
-            csv_writer.writerow([match.encode(), probs.encode(), btts.encode(), over.encode(), home.strip(), away.strip(), head.strip()])
+            probs = stats[x+1].text.split()
+            btts = stats[x+2].text.split()
+            over = stats[x+3].text.split()
+            home = stats[x+4].text.split()
+            away = stats[x+5].text.split()
+            head = stats[x+6].text.split()
+            csv_writer.writerow([match, probs, btts, over, home, away, head])
 
 
 def display_games(path):
     predictions("https://www.footstats.co.uk/index.cfm?task=forecast_premier", 'predictions.csv')
     with open(path) as file:
         csv_reader = csv.reader(file)
-        headings = next(csv_reader)
-        print(f"Headings:\n {headings}")
-        print("Values:")
+        next(csv_reader)
+        print("***    FIXTURES    ***\n")
+        x = 1
         for line in csv_reader:
-            print(line)
+            match = line[0].split()
+            match.pop(0)
+            match.pop(0)
+            if len(match) == 3:
+                print(f"[{x}] {match[0]} VS {match[2]}")
+            elif len(match) == 5:
+                print(f"[{x}] {match[0]} {match[1]} VS {match[3]} {match[4]}")
+            elif len(match) == 4:
+                a = match[1]
+                if a[0] == '[':
+                    print(f"[{x}] {match[0]} VS {match[2]} {match[3]}")
+                else:
+                    print(f"[{x}] {match[0]} {match[1]} VS {match[3]}")
+            x += 1
 
 
 def display_menu():
@@ -45,7 +58,6 @@ def display_menu():
 
   Please select one of the following options:
   [1] Display the next matches in the premier league
-
 
   """)
     return int(input())
