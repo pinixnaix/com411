@@ -24,7 +24,8 @@ def display_menu():
   [3] Display the number of passengers per gender
   [4] Display the number of passengers per age group
   [5] Display the number of survivors per age group
- 
+  [6] Find a Passenger and display the line
+  
   """)
     return int(input())
 
@@ -66,12 +67,14 @@ def display_passengers_per_age_group():
     elderly = 0
 
     for record in records:
-        if record[5] < '18':
-            children += 1
-        elif record[5] < '65':
-            adults += 1
-        else:
-            elderly += 1
+        if record[5] != '':
+            age = float(record[5])
+            if age < 18:
+                children += 1
+            elif age < 65:
+                adults += 1
+            else:
+                elderly += 1
 
     print(f"Children: {children}, Adults: {adults}, Elderly: {elderly}")
 
@@ -85,20 +88,32 @@ def display_survivors_per_age_group():
     survived_elderly = 0
 
     for record in records:
-        if record[5] < '18':
-            children += 1
-            if record[1] == '1':
-                survived_children += 1
-        elif record[5] < '65':
-            adults += 1
-            if record[1] == '1':
-                survived_adults += 1
-        else:
-            elderly += 1
-            if record[1] == '1':
-                survived_elderly += 1
+        if record[5] != '':
+            age = float(record[5])
+            if age < 18:
+                children += 1
+                if record[1] == '1':
+                    survived_children += 1
+            elif age < 65:
+                adults += 1
+                if record[1] == '1':
+                    survived_adults += 1
+            else:
+                elderly += 1
+                if record[1] == '1':
+                    survived_elderly += 1
 
     print(f"Children: {survived_children}/{children}, Adults: {survived_adults}/{adults}, Elderly: {survived_elderly}/{elderly}")
+
+
+def find():
+    print("Please enter the search parameters for the passenger's name:")
+    name = input().lower()
+
+    for record in records:
+        if name in record[3].lower():
+            print(f"{name} it is found in line {record[0]}")
+            print(record)
 
 
 def run():
@@ -123,6 +138,9 @@ def run():
 
     elif selected_option == 5:
         display_survivors_per_age_group()
+
+    elif selected_option == 6:
+        find()
 
     else:
         print("**** Error! Option not recognised! ****")
