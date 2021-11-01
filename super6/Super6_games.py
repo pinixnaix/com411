@@ -6,6 +6,7 @@ import pandas as pd
 
 
 def get_fixtures(path, file):
+
     with open(file, 'w', newline='') as file:
         headings = ['MATCH', 'PROBABILITIES', 'BOTH TEAMS TO SCORE', 'OVER 2.5', 'HOME FORM', 'LINKHOME',
                     'AWAY FORM', 'LINKAWAY', 'HEAD TO HEAD', 'LINKHEAD', 'LINKSTATS']
@@ -122,6 +123,26 @@ def display_menu():
     return int(input())
 
 
+def display_menu_fixtures():
+    print("""
+              Please select one of the following options:
+              [1] Display the Fixtures for Premier League
+              [2] Display the Fixtures for the Championship
+              [3] Go back to main menu
+              """)
+    fix = int(input())
+    if fix == 1:
+        display_games('fixtures_premier.csv')
+        display_menu_fixtures()
+    elif fix == 2:
+        display_games('fixtures_championship.csv')
+        display_menu_fixtures()
+    elif fix == 3:
+        run()
+    else:
+        print("**** Error! Option not recognised! ****")
+
+
 def run():
     selected_option = display_menu()
 
@@ -134,18 +155,7 @@ def run():
         run()
 
     elif selected_option == 2:
-        print("""
-          Please select one of the following options:
-          [1] Display the Fixtures for Premier League
-          [2] Display the Fixtures for the Championship
-          """)
-        fix = int(input())
-        if fix == 1:
-            display_games('fixtures_premier.csv')
-        elif fix == 2:
-            display_games('fixtures_championship.csv')
-        else:
-            print("**** Error! Option not recognised! ****")
+        display_menu_fixtures()
 
     elif selected_option == 3:
         select_super6_fixtures()
