@@ -24,13 +24,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\super6\predictions.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
       </map>
     </option>
   </component>
