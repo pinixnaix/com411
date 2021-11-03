@@ -6,7 +6,7 @@ def list_years(data):
     years = set()
     for year in data:
         years.add(year[9])
-    tui.display_years()
+    tui.display_years(years)
     tui.completed()
 
 
@@ -26,7 +26,7 @@ def tally_medals(data):
     medals['Gold'] = gold
     medals['Silver'] = silver
     medals['Bronze'] = bronze
-    tui.display_medal_tally()
+    tui.display_medal_tally(medals)
     tui.completed()
 
 
@@ -35,9 +35,19 @@ def tally_team_medals(data):
     team_medals = {}
     for team in data:
         if team[6] in team_medals:
-
+            if team[14] == 'Gold':
+                team_medals[team[6]]['Gold'] += 1
+            elif team[14] == 'Silver':
+                team_medals[team[6]]['Silver'] += 1
+            elif team[14] == 'Bronze':
+                team_medals[team[6]]['Bronze'] += 1
         else:
             team_medals[team[6]] = {"Gold": 0, "Silver": 0, "Bronze": 0}
-
-    tui.display_team_medal_tally()
+            if team[14] == 'Gold':
+                team_medals[team[6]]['Gold'] += 1
+            elif team[14] == 'Silver':
+                team_medals[team[6]]['Silver'] += 1
+            elif team[14] == 'Bronze':
+                team_medals[team[6]]['Bronze'] += 1
+    tui.display_team_medal_tally(team_medals)
     tui.completed()
