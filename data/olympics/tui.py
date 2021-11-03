@@ -4,16 +4,18 @@ def started(msg):
 
 
 def completed():
-    print("Operation completed.")
+    print("\nOperation completed.")
     print("*" * 85)
 
 
 def error(msg):
-    print(f"Error! {msg}")
+    print("*" * 85)
+    print(" " * 30 + f"Error! {msg}")
+    print("*" * 85)
 
 
 def menu():
-    print(f"""Please select one of the following options:
+    print(f"""\nPlease select one of the following options:
        {"[years]":<10} List unique years
        {"[tally]":<10} Tally up medals
        {"[team]":<10} Tally up medals for each team
