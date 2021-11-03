@@ -27,11 +27,9 @@ def menu():
 
 def display_medal_tally(tally):
     print(f"""
-    
-    | Gold      |{tally.get("Gold")}     |
-    | Silver    |{tally.get("Silver")}   |
-    | Bronze    |{tally.get("Bronze")}   | 
-       
+    {"| Gold":<10}|{tally.get("Gold")}{"|":>10}
+    {"| Gold":<10}|{tally.get("Silver")}{"|":>10}
+    {"| Gold":<10}|{tally.get("Bronze")}{"|":>10}     
        """)
 
 
