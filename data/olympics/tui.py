@@ -59,3 +59,9 @@ def display_team_medal_tally(team_tally):
         print(team)
         print(f"\tGold:{tally['Gold']}, Silver:{tally['Silver']}, Bronze:{tally['Bronze']}")
 
+        
+def display_athlete_medal_tally(athlete_tally):
+    for athlete, tally in athlete_tally.items():
+        print(athlete)
+        print(f"\tGold:{tally['Gold']}, Silver:{tally['Silver']}, Bronze:{tally['Bronze']}")
+
