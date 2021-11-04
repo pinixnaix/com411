@@ -57,20 +57,20 @@ def tally_athlete_medals(data):
     tui.started("Tallying medals for each athlete.")
     athlete_medals = {}
     for athlete in data:
-        if athlete[2] in team_medals:
+        if athlete[1] in athlete_medals:
             if athlete[14] == 'Gold':
-                athlete_medals[athlete[2]]['Gold'] += 1
+                athlete_medals[athlete[1]]['Gold'] += 1
             elif athlete[14] == 'Silver':
-                athlete_medals[athlete[2]]['Silver'] += 1
+                athlete_medals[athlete[1]]['Silver'] += 1
             elif athlete[14] == 'Bronze':
-                athlete_medals[athlete[2]]['Bronze'] += 1
+                athlete_medals[athlete[1]]['Bronze'] += 1
         else:
-            athlete_medals[athlete[2]] = {"Gold": 0, "Silver": 0, "Bronze": 0}
+            athlete_medals[athlete[1]] = {"Gold": 0, "Silver": 0, "Bronze": 0}
             if athlete[14] == 'Gold':
-                athlete_medals[athlete[2]]['Gold'] += 1
+                athlete_medals[athlete[1]]['Gold'] += 1
             elif athlete[14] == 'Silver':
-                athlete_medals[athlete[2]]['Silver'] += 1
+                athlete_medals[athlete[1]]['Silver'] += 1
             elif athlete[14] == 'Bronze':
-                athlete_medals[athlete[2]]['Bronze'] += 1
+                athlete_medals[athlete[1]]['Bronze'] += 1
     tui.display_athlete_medal_tally(athlete_medals)
     tui.completed()

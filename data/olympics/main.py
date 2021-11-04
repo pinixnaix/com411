@@ -42,14 +42,14 @@ def run():
     while True:
         selection = tui.menu2()
         if selection == "summer":
-            athlete_data = read_data("athlete_events.csv",selection)
-            run2(athlete_data,selection)
+            athlete_data = read_data("athlete_events.csv", selection)
+            run2(athlete_data, selection)
         elif selection == "winter":
-            athlete_data = read_data("athlete_events.csv",selection)
-            run2(athlete_data,selection)
+            athlete_data = read_data("athlete_events.csv", selection)
+            run2(athlete_data, selection)
         elif selection == "all":
-            athlete_data = read_data("athlete_events.csv",selection)
-            run2(athlete_data,selection)
+            athlete_data = read_data("athlete_events.csv", selection)
+            run2(athlete_data, selection)
         elif selection == "exit":
             break
         else:

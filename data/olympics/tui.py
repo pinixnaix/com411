@@ -30,7 +30,7 @@ def menu(games):
     if games == 'all':
         print(" "*20 + "Summer and Winter Olympics Games Statistics\n" + "*" * 85)
     else:
-        print("\n" + " "*30 + f"{games} Olympics Games Statistics\n" + "*" * 85)
+        print("\n" + " "*25 + f"{games} Olympics Games Statistics\n" + "*" * 85)
     print(f"""\nPlease select one of the following options:
        {"[years]":<10} List unique years
        {"[tally]":<10} Tally up medals
