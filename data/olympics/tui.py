@@ -35,6 +35,7 @@ def menu(games):
        {"[years]":<10} List unique years
        {"[tally]":<10} Tally up medals
        {"[team]":<10} Tally up medals for each team
+       {"[athlete]":<10} Tally up medals for each athlete
        {"[back]":<10} Go Back
        """)
     print("Your selection:")
