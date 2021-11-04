@@ -29,6 +29,8 @@ def run2(athlete_data,games):
             process.tally_medals(athlete_data)
         elif selection == "team":
             process.tally_team_medals(athlete_data)
+        elif selection == "athlete":
+            process.tally_athlete_medals(athlete_data)
         elif selection == "back":
             run()
         else:
