@@ -53,7 +53,7 @@ def tally_team_medals(data):
     tui.completed()
 
     
-def tally_athelete_medals(data):
+def tally_athlete_medals(data):
     tui.started("Tallying medals for each athlete.")
     athlete_medals = {}
     for athlete in data:
