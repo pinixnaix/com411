@@ -35,7 +35,7 @@ def tally_team_medals(data):
     team_medals = {}
     for team in data:
         if team[6] not in team_medals:
-            team_medals[team[6]] = {"Gold": 0, "Silver": 0, "Bronze": 0 }
+            team_medals[team[6]] = {"Gold": 0, "Silver": 0, "Bronze": 0}
         if team[14] == 'Gold':
             team_medals[team[6]]['Gold'] += 1
         elif team[14] == 'Silver':
