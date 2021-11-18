@@ -19,7 +19,7 @@ def read_data(path):
 
 def run():
     data = read_data('temps.csv')
-    fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True)
+    fig, (ax1, ax2) = plt.subplots(2, 1, sharex='col')
 
     ax1.plot(data.get('week1'))
     ax2.plot(data.get('week2'))
