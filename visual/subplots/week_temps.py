@@ -21,8 +21,8 @@ def run():
     data = read_data('temps.csv')
     fig, (ax1, ax2) = plt.subplots(2, 1, sharex='col')
 
-    ax1.plot(data.get('week1'))
-    ax2.plot(data.get('week2'))
+    ax1.plot(range(len(data['week1'])), data['week1'])
+    ax2.plot(range(len(data['week2'])), data['week2'])
     ax1.set_xlim(1, 7)
 
     plt.tight_layout()
